@@ -1,0 +1,16 @@
+{
+	"name": "ss_demo",
+	"description": "The silverstripe demo project",
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "coosigma",
+			"email": "iceliang@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"SilverStripe\\SSDemo\\": "src/"
+		}
+	}
+}
