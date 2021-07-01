@@ -225,11 +225,6 @@ div.responsive {
 	div.responsive {
 		width: 90%;
 	}
-	.subscribe .content-area .content {
-		position: relative;
-		top: 5%;
-		left: 10%;
-	}
 	.subscribe .form-area {
 		padding-right: 0;
 		margin-left: auto;
