@@ -12,7 +12,7 @@
 	<% require themedCSS('typography') %>
 	<% require themedCSS('form') %>
 	<% require themedCSS('layout') %>
-	<link rel="shortcut icon" href="themes/simple/images/favicon.ico" />
+	<link rel="shortcut icon" href="$SiteConfig.LogoBadge.URL" />
 </head>
 <body class="$ClassName.ShortName<% if not $Menu(2) %> no-sidebar<% end_if %>" <% if $i18nScriptDirection %>dir="$i18nScriptDirection"<% end_if %>>
 <% include Header %>
