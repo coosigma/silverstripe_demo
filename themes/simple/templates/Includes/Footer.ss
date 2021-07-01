@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="logo-area">
-        <img src="$SiteConfig.LogoBudge.URL" />
+        <img src="$SiteConfig.LogoBadge.URL" />
         $SiteConfig.FooterPhrase
     </div>
     <div class="phone">

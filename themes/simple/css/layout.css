@@ -32,6 +32,9 @@ body {
 .header > button {
 	position: relative;
 	right: 2em;
+}
+
+button {
 	background: none;
 	box-sizing: border-box;
 	border: 2px solid #ffffff;
@@ -105,12 +108,11 @@ body {
 .hero .content .cta a {
 	text-decoration: none;
 }
-
 section {
-	margin-top: 6%;
-	margin-bottom: 6%;
+	margin-bottom: 12%;
 }
-section.two-column {
+.two-column,
+.subscribe {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: "a b";
@@ -132,11 +134,70 @@ div.responsive {
 	width: 100%;
 	object-fit: cover;
 }
+.subscribe {
+	align-items: initial;
+}
+.subscribe .content-area .content {
+	display: inline-block;
+	position: relative;
+	top: 10%;
+	left: 20%;
+}
+.subscribe .form-area .result {
+	font-family: 'MuliRegular';
+	font-size: 16px;
+	color: red;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.subscribe .form-area .form {
+	width: 90%;
+	display: grid;
+	grid-template: 30% 30% 40% / 1fr 1fr;
+	row-gap: 7px;
+	column-gap: 1em;
+	grid-template-areas: "a b"
+								"c c"
+								"d e";
+	justify-items: left;
+	align-items: center;
+}
 
+.subscribe .form-area {
+	padding-right: 10vw;
+}
+.subscribe .form-area .form input {
+	display: block;
+	width: 100%;
+	background-color: #3e3e3e;
+	line-height: 3em;
+	border: none;
+	font-family: 'MuliRegular';
+	font-size: 16px;
+	color: #ffffff;
+	/* padding-left: 1em; */
+	text-indent: 1em;
+}
+.subscribe .form-area .form input:nth-child(1) {
+	grid-area: a;
+}
+.subscribe .form-area .form input:nth-child(2) {
+	grid-area: b;
+}
+.subscribe .form-area .form input:nth-child(3) {
+	grid-area: c;
+}
+.subscribe .form-area .form button {
+	grid-area: d;
+	line-height: 2.5em;
+	padding-left: 3em;
+	padding-right: 3em;
+}
 /* BREAKPOINT 960px */
 
 @media only screen and (max-width: 960px) {
-	section.two-column {
+	.two-column,
+	.subscribe {
 		grid-template: 1fr 1fr / 1fr;
 		grid-template-areas: "a"
 									"b";
@@ -158,6 +219,19 @@ div.responsive {
 	.hero .content {
 		top: 11%;
 		left: 5%;
+	}
+	.subscribe .content-area .content {
+		position: relative;
+		top: 5%;
+		left: 10%;
+	}
+	.subscribe .form-area {
+		padding-right: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.subscribe .form-area .form {
+		width: 100%;
 	}
 	.footer {
 		align-items: center;

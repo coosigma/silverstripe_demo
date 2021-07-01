@@ -22,12 +22,12 @@ class SiteConfigExtension extends DataExtension
 
     private static $has_one = array(
         'NamedLogo' => Image::class,
-        'LogoBudge' => Image::class,
+        'LogoBadge' => Image::class,
     );
 
     private static $owns = array(
         'NamedLogo',
-        'LogoBudge',
+        'LogoBadge',
     );
 
     public function updateCMSFields(FieldList $fields)
@@ -41,7 +41,7 @@ class SiteConfigExtension extends DataExtension
             TextField::create('LILink', 'LinkedIn Link'),
             TextField::create('Address', 'Address'),
             UploadField::create('NamedLogo', 'Named Logo'),
-            UploadField::create('LogoBudge', 'Logo Budge'),
+            UploadField::create('LogoBadge', 'Logo Badge'),
         ]);
     }
 }
