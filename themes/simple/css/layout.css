@@ -1,0 +1,151 @@
+/** ----------------------------------------------------------
+ *
+ * Contains the main layout of the page and the individual styles.
+ * Acts as the main stylesheet for theme.
+ *
+ *		Include your notes or table of contents below....
+ *		Include color hex's or values of your grid
+ *
+ *		1. OOCSS GRID
+ *		2. MAIN LAYOUT
+ *		3. HEADER
+ *			- Brand
+ *			- Search Form
+ *		4. Navigation
+ *			- Primary Navigation
+ *			- tablet Navigation
+ *			- Secondary Navigation
+ *			- Secondary Nav 2-5 Levels deep
+ *		5. Mixed
+ *		6. Footer
+ *		7. Page Specific Layout
+ *			- Homepage
+ *			- Search Results
+ *		8. Device and Responsive Layout
+ *			- Breakpoint 960px
+ *			- Breakpoint 640px
+ *				- Search Form
+ *				- Main Content
+ *		9. Print Styles
+ *			- Simple Theme custom print styles
+ *
+ * @author Your Name <email@silverstripe.com>
+ * ------------------------------------------------------- */
+
+/* OOCSS Grid
+* https://github.com/stubbornella/oocss/wiki/grids
+*/
+
+/* MAIN LAYOUT */
+body {
+    margin: 0;
+    background: #171718;
+    min-width: 240px;
+	 width: 100vw;
+    -webkit-text-size-adjust: none; /* The text size is not adjusted for Safari on iPhone */
+}
+	.main {
+	    padding: 90px 0 60px;
+	    min-height: 300px;
+	}
+
+
+/* HEADER */
+.header {
+	display: flex;
+	margin-top: 1em;
+	width: calc(100vw - 15px);
+	justify-content: space-between;
+	position: absolute;
+	z-index: 9;
+   background: rgba(0, 0, 0, 0);
+}
+.header > .logo {
+	position: relative;
+	left: 2em;
+}
+.header > button {
+	position: relative;
+	right: 2em;
+	background: none;
+	box-sizing: border-box;
+	border: 2px solid #ffffff;
+	border-radius: 0px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+	font-family: 'MuliBold';
+	font-size: 14px;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	text-align: center;;
+}
+
+/* FOOTER */
+.footer {
+    background: none;
+	 display: grid;
+	 grid-template-columns: repeat(3, 1fr);
+	 grid-template-areas: "a b c";
+	 justify-items: center;
+	 justify-content: space-around;
+}
+.footer .logo-area {
+	grid-area: a;
+	font-family: 'MuliBold';
+	font-size: 14px;
+	color: #ffffff;
+	letter-spacing: 0;
+}
+.footer .logo-area > img {
+	margin-right: 1em;
+}
+.footer .phone {
+	grid-area: b;
+}
+.footer a {
+	font-family: 'MuliBold';
+	font-size: 14px;
+	color: #ffffff;
+	letter-spacing: 0;
+	text-align: center;
+	text-decoration: none;
+}
+.footer .sns {
+	grid-area: c;
+}
+.footer > .sns  > a {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+/* BREAKPOINT 960px */
+
+@media only screen and (max-width: 960px) {
+	.footer {
+		align-items: center;
+		grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+		grid-row-gap: 1em;
+		grid-template-areas: "a c"
+									"b c";
+	}
+}
+
+/* BREAKPOINT 640px */
+
+/* when changing the breakpoint below, change it ito the same value in the script.js file as well */
+@media only screen and (max-width: 640px) {
+	.header > .logo {
+		left: 5px;
+	}
+	.header > button {
+		margin-right: 0;
+		right: -2px;
+	}
+	.footer {
+		align-items: center;
+		grid-template: repeat(3, 1fr) / 1fr;
+		grid-row-gap: 1em;
+		grid-template-areas: "a"
+									"c"
+									"b";
+	}
+}

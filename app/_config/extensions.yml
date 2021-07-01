@@ -1,0 +1,10 @@
+---
+Name: 'sdextensions'
+---
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - SSDemo\Extension\SiteConfigExtension
+
+Page:
+  extensions:
+    - DNADesign\Elemental\Extensions\ElementalPageExtension

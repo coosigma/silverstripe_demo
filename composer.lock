@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5bce46b085c21f72221ee0443cdbbab",
+    "content-hash": "6323d2360bb195a39c0b38ed9c103cd6",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -1402,6 +1402,61 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "silvershop/silverstripe-hasonefield",
+            "version": "3.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silvershop/silverstripe-hasonefield.git",
+                "reference": "478a13d73759ab026fbb9177d0f771dfa4679277"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silvershop/silverstripe-hasonefield/zipball/478a13d73759ab026fbb9177d0f771dfa4679277",
+                "reference": "478a13d73759ab026fbb9177d0f771dfa4679277",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "^4.0",
+                "silverstripe/vendor-plugin": "^1.0"
+            },
+            "replace": {
+                "hchokshi/silverstripe-hasonefield": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                },
+                "expose": [
+                    "client"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "SilverShop\\HasOneField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Shipman",
+                    "email": "jeremy@burnbright.net"
+                }
+            ],
+            "description": "Edit a has_one relationship using a GridField, triggered by clicking a button.",
+            "support": {
+                "issues": "https://github.com/silvershop/silverstripe-hasonefield/issues",
+                "source": "https://github.com/silvershop/silverstripe-hasonefield/tree/master"
+            },
+            "time": "2020-07-30T20:54:18+00:00"
         },
         {
             "name": "silverstripe-themes/simple",
