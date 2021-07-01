@@ -1,0 +1,7 @@
+DNADesign\Elemental\Controllers\ElementController:
+  include_default_styles: false
+Page:
+  disallowed_elements:
+    - Elements\BaseElement
+    - Elements\CustomBaseElement
+    - DNADesign\Elemental\Models\ElementContent

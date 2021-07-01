@@ -2,40 +2,33 @@
 
 namespace Elements;
 
-use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Forms\OptionsetField;
 use SilverStripe\Forms\CompositeValidator;
 use SilverStripe\Assets\Image;
-use SilverStripe\Forms\GridField\GridField;
-use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
-use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\RequiredFields;
-use WebTorque\AdvancedLink\AdvancedLink;
-use WebTorque\AdvancedLink\WTHasOneButtonField;
 
-class SectionModule extends CustomBaseElement
+class TwoColumnModule extends CustomBaseElement
 {
 
-    private static $table_name = "sections";
-    private static $singular_name = 'Section';
-    private static $plural_name = 'Sections';
+    private static $table_name = "two_columns";
+    private static $singular_name = 'Two-column Module';
+    private static $plural_name = 'Two-column Modules';
     private static $inline_editable = false;
 
     private static $db = [
         'Title' => 'Varchar',
-        'ImagePosition' => 'Enum("BG, Left, Right", "BG")',
+        'ImagePosition' => 'Enum("Left, Right", "Left")',
         'Content' => 'HTMLText',
     ];
 
     private static $defaults = [
-        'ImagePosition' => 'BG',
+        'ImagePosition' => 'Left',
     ];
 
     private static $has_one = [
         'Image' => Image::class,
-        'CTAButton' => AdvancedLink::class,
     ];
 
     private static $owns = [
@@ -43,7 +36,6 @@ class SectionModule extends CustomBaseElement
     ];
 
     private static $option_types = [
-        "BG" => "Background",
         "Left" => "Left Side",
         "Right" => "Right Side",
     ];
@@ -51,7 +43,6 @@ class SectionModule extends CustomBaseElement
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->removeByName(array('CTAButtonID'));
         $fields->addFieldsToTab('Root.Main', [
             OptionsetField::create(
                 'ImagePosition',
@@ -59,25 +50,10 @@ class SectionModule extends CustomBaseElement
                 Config::inst()->get(self::class, 'option_types')
             )->setDescription('This setting affects the image position and the section layout'),
             HTMLEditorField::create('Content', 'Content'),
-            WTHasOneButtonField::create($this, 'CTAButton'),
         ]
         );
 
         return $fields;
     }
 
-    public function validate()
-    {
-        $result = parent::validate();
-
-        return $result;
-    }
-
-    public function getCMSCompositeValidator(): CompositeValidator
-    {
-        $compositeValidator = parent::getCMSCompositeValidator();
-        $compositeValidator->addValidator(RequiredFields::create([
-        ]));
-        return $compositeValidator;
-    }
 }

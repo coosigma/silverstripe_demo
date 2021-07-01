@@ -1,53 +1,17 @@
-/** ----------------------------------------------------------
- *
- * Contains the main layout of the page and the individual styles.
- * Acts as the main stylesheet for theme.
- *
- *		Include your notes or table of contents below....
- *		Include color hex's or values of your grid
- *
- *		1. OOCSS GRID
- *		2. MAIN LAYOUT
- *		3. HEADER
- *			- Brand
- *			- Search Form
- *		4. Navigation
- *			- Primary Navigation
- *			- tablet Navigation
- *			- Secondary Navigation
- *			- Secondary Nav 2-5 Levels deep
- *		5. Mixed
- *		6. Footer
- *		7. Page Specific Layout
- *			- Homepage
- *			- Search Results
- *		8. Device and Responsive Layout
- *			- Breakpoint 960px
- *			- Breakpoint 640px
- *				- Search Form
- *				- Main Content
- *		9. Print Styles
- *			- Simple Theme custom print styles
- *
- * @author Your Name <email@silverstripe.com>
- * ------------------------------------------------------- */
-
-/* OOCSS Grid
-* https://github.com/stubbornella/oocss/wiki/grids
-*/
-
 /* MAIN LAYOUT */
 body {
     margin: 0;
+	 position: absolute;
+	 top: 0;
     background: #171718;
-    min-width: 240px;
-	 width: 100vw;
+    min-width: 462px;
     -webkit-text-size-adjust: none; /* The text size is not adjusted for Safari on iPhone */
 }
-	.main {
-	    padding: 90px 0 60px;
-	    min-height: 300px;
-	}
+.main {
+	transform: translateY(-152px);
+    padding: 0 0 60px;
+    min-height: 300px;
+}
 
 
 /* HEADER */
@@ -57,6 +21,7 @@ body {
 	width: calc(100vw - 15px);
 	justify-content: space-between;
 	position: absolute;
+	top: 2em;
 	z-index: 9;
    background: rgba(0, 0, 0, 0);
 }
@@ -87,6 +52,7 @@ body {
 	 grid-template-areas: "a b c";
 	 justify-items: center;
 	 justify-content: space-around;
+	 margin-bottom: 1em;
 }
 .footer .logo-area {
 	grid-area: a;
@@ -116,10 +82,83 @@ body {
 	margin-left: 1em;
 	margin-right: 1em;
 }
+.hero {
+	--hero-width: calc(100vw - 15px);
+	width: var(--hero-width);
+	min-height: calc((var(--hero-width) * 0.56));
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-origin: border-box;
+	background-clip: border-box;
+}
+.hero .content {
+	position: absolute;
+	top: 13%;
+	left: 18%;
+}
+.hero .content .cta {
+	margin-top: 3.5em;
+}
+.hero .content .cta a {
+	text-decoration: none;
+}
+
+section {
+	margin-top: 6%;
+	margin-bottom: 6%;
+}
+section.two-column {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "a b";
+	align-items: center;
+}
+div.left {
+	grid-area: a;
+}
+div.right {
+	grid-area: b;
+}
+.right > .content > .responsive {
+	margin-left: 10% !important;
+}
+div.responsive {
+	width: 60% !important;
+}
+.two-column .image {
+	width: 100%;
+	object-fit: cover;
+}
 
 /* BREAKPOINT 960px */
 
 @media only screen and (max-width: 960px) {
+	section.two-column {
+		grid-template: 1fr 1fr / 1fr;
+		grid-template-areas: "a"
+									"b";
+		row-gap: 3em;
+		justify-content: center;
+		align-items: center;
+	}
+	div.image-wrapper {
+		grid-area: a;
+	}
+	div.content-wrapper {
+		grid-area: b;
+	}
+	.hero {
+		--hero-width: calc(100vw - 15px);
+		background-size: auto;
+		min-height: calc((var(--hero-width) * 1.2));
+	}
+	.hero .content {
+		top: 11%;
+		left: 5%;
+	}
 	.footer {
 		align-items: center;
 		grid-template: repeat(2, 1fr) / repeat(2, 1fr);
@@ -139,6 +178,10 @@ body {
 	.header > button {
 		margin-right: 0;
 		right: -2px;
+	}
+	.hero .content {
+		top: 10%;
+		left: 3%;
 	}
 	.footer {
 		align-items: center;
