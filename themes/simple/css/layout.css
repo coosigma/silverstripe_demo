@@ -128,7 +128,7 @@ div.right {
 	margin-left: 10% !important;
 }
 div.responsive {
-	width: 60% !important;
+	width: 60%;
 }
 .two-column .image {
 	width: 100%;
@@ -136,12 +136,6 @@ div.responsive {
 }
 .subscribe {
 	align-items: initial;
-}
-.subscribe .content-area .content {
-	display: inline-block;
-	position: relative;
-	top: 10%;
-	left: 20%;
 }
 .subscribe .form-area .result {
 	font-family: 'MuliRegular';
@@ -193,6 +187,14 @@ div.responsive {
 	padding-left: 3em;
 	padding-right: 3em;
 }
+
+/* BREAKPOINT 1200px */
+
+@media only screen and (max-width: 1200px) and (min-width: 961px) {
+	div.responsive {
+		width: 80%;
+	}
+}
 /* BREAKPOINT 960px */
 
 @media only screen and (max-width: 960px) {
@@ -220,6 +222,9 @@ div.responsive {
 		top: 11%;
 		left: 5%;
 	}
+	div.responsive {
+		width: 90%;
+	}
 	.subscribe .content-area .content {
 		position: relative;
 		top: 5%;
@@ -229,6 +234,7 @@ div.responsive {
 		padding-right: 0;
 		margin-left: auto;
 		margin-right: auto;
+		width: 80%;
 	}
 	.subscribe .form-area .form {
 		width: 100%;
@@ -251,11 +257,14 @@ div.responsive {
 	}
 	.header > button {
 		margin-right: 0;
-		right: -2px;
+		right: 10px;
 	}
 	.hero .content {
 		top: 10%;
 		left: 3%;
+	}
+	.subscribe .form-area {
+		width: 90%;
 	}
 	.footer {
 		align-items: center;
