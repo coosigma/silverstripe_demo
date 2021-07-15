@@ -16,6 +16,12 @@ class Subscriber extends DataObject
         'Email' => 'Varchar',
     ];
 
+    private static $summary_fields = [
+        'Name' => 'Name',
+        'Company' => 'Company',
+        'Email' => 'Email',
+    ];
+
     public function validate()
     {
         $result = parent::validate();
